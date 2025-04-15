@@ -15,4 +15,5 @@ public:
 
 private:
   cv::Mat main_frame;
+  ros::NodeHandle node_handle;
 };
