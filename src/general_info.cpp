@@ -7,8 +7,8 @@
 using namespace std;
 
 GeneralInfo::GeneralInfo(cv::Mat main_frame, ros::NodeHandle *node_handle) {
-  node_handler = node_handle;
   frame = main_frame;
+  node_handler = node_handle;
   topic_subscriber = node_handler->subscribe<robot_info::RobotInfoMsg>(
       "robot_info", 2, &GeneralInfo::topic_subscriber_callback, this);
 }

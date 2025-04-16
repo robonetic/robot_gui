@@ -40,6 +40,7 @@ void TeleopButtons::render() {
 void TeleopButtons::forward() {
   if (cmd_vel_msg.linear.x < 0.0) {
     cmd_vel_msg.linear.x = positive_min_speed;
+    return;
   }
 
   if (forward_increase) {
@@ -64,6 +65,7 @@ void TeleopButtons::forward() {
 void TeleopButtons::left() {
   if (cmd_vel_msg.angular.z < 0.0) {
     cmd_vel_msg.angular.z = positive_min_speed;
+    return;
   }
 
   if (left_increase) {
@@ -88,6 +90,7 @@ void TeleopButtons::left() {
 void TeleopButtons::right() {
   if (cmd_vel_msg.angular.z >= 0.0) {
     cmd_vel_msg.angular.z = negative_min_speed;
+    return;
   }
 
   if (right_increase) {
@@ -112,6 +115,7 @@ void TeleopButtons::right() {
 void TeleopButtons::backward() {
   if (cmd_vel_msg.linear.x >= 0.0) {
     cmd_vel_msg.linear.x = negative_min_speed;
+    return;
   }
 
   if (backward_increase) {
