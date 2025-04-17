@@ -11,7 +11,6 @@
 class RobotGUI {
 public:
   RobotGUI();
-  ~RobotGUI();
 
 private:
   cv::Mat main_frame;

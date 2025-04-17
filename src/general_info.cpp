@@ -1,10 +1,7 @@
 #include "robot_gui/general_info.h"
 #include "robot_gui/cvui.h"
 #include "robot_info/RobotInfoMsg.h"
-#include <iostream>
 #include <ros/ros.h>
-
-using namespace std;
 
 GeneralInfo::GeneralInfo(cv::Mat main_frame, ros::NodeHandle *node_handle) {
   frame = main_frame;

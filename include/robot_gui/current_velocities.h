@@ -8,8 +8,8 @@ class CurrentVelocities {
 public:
   CurrentVelocities(cv::Mat main_frame, ros::NodeHandle *node_handle);
 
-  void render();
   void topic_subscriber_callback(const geometry_msgs::Twist::ConstPtr &msg);
+  void render();
 
 private:
   float linear_velocity = 0.0;

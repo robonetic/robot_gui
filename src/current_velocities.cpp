@@ -1,8 +1,7 @@
 #include "robot_gui/current_velocities.h"
 #include "robot_gui/cvui.h"
-#include "ros/node_handle.h"
-#include <ctime>
 #include <geometry_msgs/Twist.h>
+#include <ros/ros.h>
 
 using namespace std;
 
@@ -16,10 +15,10 @@ CurrentVelocities::CurrentVelocities(cv::Mat main_frame,
 
 void CurrentVelocities::render() {
   cvui::window(frame, 5, 400, 140, 45, "Linear velocity:");
-  cvui::printf(frame, 25, 425, 0.4, 0xff0000, "%.2f m/sec", linear_velocity);
+  cvui::printf(frame, 25, 425, 0.4, 0x0000ff, "%.2f m/sec", linear_velocity);
 
-  cvui::window(frame, 150, 400, 140, 45, "Angular velocity:");
-  cvui::printf(frame, 175, 425, 0.4, 0xff0000, "%.2f rad/sec",
+  cvui::window(frame, 155, 400, 140, 45, "Angular velocity:");
+  cvui::printf(frame, 175, 425, 0.4, 0x0000ff, "%.2f rad/sec",
                angular_velocity);
 }
 

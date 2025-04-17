@@ -136,6 +136,10 @@ add_library(current_velocities
 	src/current_velocities.cpp
 )
 
+add_library(robot_position
+	src/robot_position.cpp
+)
+
 add_library(robot_gui
   src/robot_gui.cpp
 )
@@ -171,6 +175,7 @@ target_link_libraries(robot_gui
 	general_info
 	teleop_buttons
 	current_velocities
+	robot_position
   ${catkin_LIBRARIES} ${OpenCV_LIBRARIES}
 )
 
