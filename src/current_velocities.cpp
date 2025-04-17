@@ -15,10 +15,10 @@ CurrentVelocities::CurrentVelocities(cv::Mat main_frame,
 
 void CurrentVelocities::render() {
   cvui::window(frame, 5, 400, 140, 45, "Linear velocity:");
-  cvui::printf(frame, 25, 425, 0.4, 0x0000ff, "%.2f m/sec", linear_velocity);
+  cvui::printf(frame, 25, 425, 0.4, 0x00ff00, "%.2f m/sec", linear_velocity);
 
   cvui::window(frame, 155, 400, 140, 45, "Angular velocity:");
-  cvui::printf(frame, 175, 425, 0.4, 0x0000ff, "%.2f rad/sec",
+  cvui::printf(frame, 175, 425, 0.4, 0x00ff00, "%.2f rad/sec",
                angular_velocity);
 }
 

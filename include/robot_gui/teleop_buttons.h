@@ -30,9 +30,9 @@ private:
   bool right_increase = true;
   bool backward_increase = true;
 
-  ros::Publisher topic_publisher;
-  ros::NodeHandle *node_handler;
-  ros::Timer cmd_vel_timer;
   geometry_msgs::Twist cmd_vel_msg;
+  ros::Publisher topic_publisher;
+  ros::Timer cmd_vel_timer;
+  ros::NodeHandle *node_handler;
   cv::Mat frame;
 };

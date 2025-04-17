@@ -12,14 +12,14 @@ RobotPosition::RobotPosition(cv::Mat main_frame, ros::NodeHandle *node_handle) {
 
 void RobotPosition::render() {
   cvui::text(frame, 5, 460, "Estimated robot position based off odmetry");
-  
-  cvui::window(frame, 5, 475, 85, 100, "X");
+
+  cvui::window(frame, 5, 475, 85, 85, "X");
   cvui::printf(frame, 10, 500, 0.6, 0x00ff00, "%.2f", x_pos);
 
-  cvui::window(frame, 110, 475, 85, 100, "Y");
+  cvui::window(frame, 110, 475, 85, 85, "Y");
   cvui::printf(frame, 120, 500, 0.6, 0x00ff00, "%.2f", y_pos);
 
-  cvui::window(frame, 210, 475, 85, 100, "Z");
+  cvui::window(frame, 210, 475, 85, 85, "Z");
   cvui::printf(frame, 212, 500, 0.6, 0x00ff00, "%.2f", z_pos);
 }
 

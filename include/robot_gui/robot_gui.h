@@ -13,6 +13,6 @@ public:
   RobotGUI();
 
 private:
-  cv::Mat main_frame;
   ros::NodeHandle node_handle;
+  cv::Mat main_frame;
 };

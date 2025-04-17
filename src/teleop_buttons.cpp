@@ -6,12 +6,12 @@ using namespace std;
 using namespace cvui;
 
 TeleopButtons::TeleopButtons(cv::Mat main_frame, ros::NodeHandle *node_handle) {
+  frame = main_frame;
   node_handler = node_handle;
   topic_publisher =
       node_handler->advertise<geometry_msgs::Twist>("cmd_vel", 10);
   cmd_vel_timer = node_handle->createTimer(
       ros::Duration(0.1), &TeleopButtons::publish_cmd_vel, this);
-  frame = main_frame;
 }
 
 void TeleopButtons::publish_cmd_vel(const ros::TimerEvent &event) {

@@ -1,5 +1,6 @@
 #include "robot_gui/robot_gui.h"
 #include "robot_gui/current_velocities.h"
+#include "robot_gui/distance_traveled.h"
 #include "robot_gui/general_info.h"
 #include "robot_gui/robot_position.h"
 #include "robot_gui/teleop_buttons.h"
@@ -13,6 +14,7 @@ RobotGUI::RobotGUI() {
   TeleopButtons teleop_buttons(frame, &node_handle);
   CurrentVelocities current_velocities(frame, &node_handle);
   RobotPosition robot_position(frame, &node_handle);
+  DistanceTraveled distance_traveled(frame, &node_handle);
 
   while (ros::ok) {
     frame = cv::Scalar(49, 52, 49);
@@ -21,6 +23,7 @@ RobotGUI::RobotGUI() {
     teleop_buttons.render();
     current_velocities.render();
     robot_position.render();
+    distance_traveled.render();
 
     cvui::imshow(WINDOW_NAME, frame);
 

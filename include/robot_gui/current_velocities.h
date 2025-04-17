@@ -14,7 +14,8 @@ public:
 private:
   float linear_velocity = 0.0;
   float angular_velocity = 0.0;
-  ros::NodeHandle *node_handler;
+
   ros::Subscriber topic_subscriber;
+  ros::NodeHandle *node_handler;
   cv::Mat frame;
 };
