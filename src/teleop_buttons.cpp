@@ -38,102 +38,26 @@ void TeleopButtons::render() {
 }
 
 void TeleopButtons::forward() {
-  if (cmd_vel_msg.linear.x < 0.0) {
-    cmd_vel_msg.linear.x = positive_min_speed;
-    return;
-  }
-
-  if (forward_increase) {
-    if (abs(cmd_vel_msg.linear.x - positive_max_speed) < precision) {
-      cmd_vel_msg.linear.x -= step;
-      forward_increase = false;
-      return;
-    }
-
-    cmd_vel_msg.linear.x += step;
-  } else {
-    if (cmd_vel_msg.linear.x <= positive_min_speed + precision) {
-      cmd_vel_msg.linear.x += step;
-      forward_increase = true;
-      return;
-    }
-
-    cmd_vel_msg.linear.x -= step;
+  if (cmd_vel_msg.linear.x < 1) {
+    cmd_vel_msg.linear.x += 0.2;
   }
 }
 
 void TeleopButtons::left() {
-  if (cmd_vel_msg.angular.z < 0.0) {
-    cmd_vel_msg.angular.z = positive_min_speed;
-    return;
-  }
-
-  if (left_increase) {
-    if (abs(cmd_vel_msg.angular.z - positive_max_speed) < precision) {
-      cmd_vel_msg.angular.z -= step;
-      left_increase = false;
-      return;
-    }
-
-    cmd_vel_msg.angular.z += step;
-  } else {
-    if (cmd_vel_msg.angular.z <= positive_min_speed + precision) {
-      cmd_vel_msg.angular.z += step;
-      left_increase = true;
-      return;
-    }
-
-    cmd_vel_msg.angular.z -= step;
+  if (cmd_vel_msg.angular.z < 1) {
+    cmd_vel_msg.angular.z += 0.2;
   }
 }
 
 void TeleopButtons::right() {
-  if (cmd_vel_msg.angular.z >= 0.0) {
-    cmd_vel_msg.angular.z = negative_min_speed;
-    return;
-  }
-
-  if (right_increase) {
-    if (cmd_vel_msg.angular.z - negative_max_speed < precision) {
-      cmd_vel_msg.angular.z += step;
-      right_increase = false;
-      return;
-    }
-
-    cmd_vel_msg.angular.z -= step;
-  } else {
-    if (cmd_vel_msg.angular.z >= negative_min_speed - precision) {
-      cmd_vel_msg.angular.z -= step;
-      right_increase = true;
-      return;
-    }
-
-    cmd_vel_msg.angular.z += step;
+  if (cmd_vel_msg.angular.z > -1) {
+    cmd_vel_msg.angular.z -= 0.2;
   }
 }
 
 void TeleopButtons::backward() {
-  if (cmd_vel_msg.linear.x >= 0.0) {
-    cmd_vel_msg.linear.x = negative_min_speed;
-    return;
-  }
-
-  if (backward_increase) {
-    if (cmd_vel_msg.linear.x - negative_max_speed < precision) {
-      cmd_vel_msg.linear.x += step;
-      backward_increase = false;
-      return;
-    }
-
+  if (cmd_vel_msg.linear.x > -1) {
     cmd_vel_msg.linear.x -= step;
-  } else {
-    if (cmd_vel_msg.linear.x >= negative_min_speed - precision) {
-      cmd_vel_msg.linear.x -= step;
-      backward_increase = true;
-      return;
-    }
-
-    cmd_vel_msg.linear.x += step;
   }
 }
 

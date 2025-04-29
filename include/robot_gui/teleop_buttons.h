@@ -17,11 +17,6 @@ public:
   void stop();
 
 private:
-  double positive_max_speed = 1;
-  double positive_min_speed = 0.2;
-  double negative_max_speed = -1;
-  double negative_min_speed = -0.2;
-
   double precision = 1e-6;
   double step = 0.2;
 

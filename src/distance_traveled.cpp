@@ -4,6 +4,8 @@
 #include <iostream>
 #include <std_srvs/Trigger.h>
 
+using namespace std;
+
 DistanceTraveled::DistanceTraveled(cv::Mat main_frame,
                                    ros::NodeHandle *node_handle) {
   frame = main_frame;

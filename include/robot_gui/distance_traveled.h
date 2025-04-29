@@ -4,6 +4,7 @@
 #include "ros/service_client.h"
 #include <opencv2/opencv.hpp>
 #include <ros/ros.h>
+#include <std_srvs/Trigger.h>
 
 using namespace std;
 

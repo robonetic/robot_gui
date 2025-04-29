@@ -4,7 +4,12 @@
 #include "robot_gui/general_info.h"
 #include "robot_gui/robot_position.h"
 #include "robot_gui/teleop_buttons.h"
+#include "ros/init.h"
+#include <csignal>
+#include <iostream>
 #include <ros/ros.h>
+
+using namespace std;
 
 RobotGUI::RobotGUI() {
   cvui::init(WINDOW_NAME);
@@ -16,7 +21,7 @@ RobotGUI::RobotGUI() {
   RobotPosition robot_position(frame, &node_handle);
   DistanceTraveled distance_traveled(frame, &node_handle);
 
-  while (ros::ok) {
+  while (ros::ok()) {
     frame = cv::Scalar(49, 52, 49);
 
     general_info.render();
@@ -27,7 +32,7 @@ RobotGUI::RobotGUI() {
 
     cvui::imshow(WINDOW_NAME, frame);
 
-    if (cv::waitKey(20) == 27) {
+    if (cv::waitKey(20) == 3) {
       break;
     }
 

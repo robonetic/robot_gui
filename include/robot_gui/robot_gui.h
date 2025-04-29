@@ -15,4 +15,6 @@ public:
 private:
   ros::NodeHandle node_handle;
   cv::Mat main_frame;
+
+  bool render_display = true;
 };

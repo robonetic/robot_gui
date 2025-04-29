@@ -13,11 +13,22 @@ GeneralInfo::GeneralInfo(cv::Mat main_frame, ros::NodeHandle *node_handle) {
 void GeneralInfo::render() {
   cvui::window(frame, 10, 10, 280, 150, "Info");
 
-  cvui::printf(frame, 15, 40, "%s", robot_info.data_field_01.c_str());
-  cvui::printf(frame, 15, 60, "%s", robot_info.data_field_02.c_str());
-  cvui::printf(frame, 15, 80, "%s", robot_info.data_field_03.c_str());
-  cvui::printf(frame, 15, 100, "%s", robot_info.data_field_04.c_str());
-  cvui::printf(frame, 15, 120, "%s", robot_info.data_field_05.c_str());
+  cvui::printf(frame, 15, 40, 0.4, 0x00ff00, "%s",
+               robot_info.data_field_01.c_str());
+  cvui::printf(frame, 15, 55, 0.4, 0x00ff00, "%s",
+               robot_info.data_field_02.c_str());
+  cvui::printf(frame, 15, 70, 0.4, 0x00ff00, "%s",
+               robot_info.data_field_03.c_str());
+  cvui::printf(frame, 15, 85, 0.4, 0x00ff00, "%s",
+               robot_info.data_field_04.c_str());
+  cvui::printf(frame, 15, 100, 0.4, 0x00ff00, "%s",
+               robot_info.data_field_05.c_str());
+  cvui::printf(frame, 15, 115, 0.4, 0x00ff00, "%s",
+               robot_info.data_field_06.c_str());
+  cvui::printf(frame, 15, 130, 0.4, 0x00ff00, "%s",
+               robot_info.data_field_07.c_str());
+  cvui::printf(frame, 15, 145, 0.4, 0x00ff00, "%s",
+               robot_info.data_field_08.c_str());
 }
 
 void GeneralInfo::topic_subscriber_callback(

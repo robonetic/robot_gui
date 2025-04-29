@@ -1,7 +1,10 @@
 #include "robot_gui/robot_position.h"
 #include "robot_gui/cvui.h"
+#include <iostream>
 #include <nav_msgs/Odometry.h>
 #include <ros/ros.h>
+
+using namespace std;
 
 RobotPosition::RobotPosition(cv::Mat main_frame, ros::NodeHandle *node_handle) {
   node_handler = node_handle;
@@ -25,9 +28,7 @@ void RobotPosition::render() {
 
 void RobotPosition::topic_subscriber_callback(
     const nav_msgs::Odometry::ConstPtr &msg) {
-  nav_msgs::Odometry odom_msg = *msg;
-
-  x_pos = odom_msg.pose.pose.position.x;
-  y_pos = odom_msg.pose.pose.position.y;
-  z_pos = odom_msg.pose.pose.orientation.z;
+  x_pos = msg->pose.pose.position.x;
+  y_pos = msg->pose.pose.position.y;
+  z_pos = msg->pose.pose.orientation.z;
 }
